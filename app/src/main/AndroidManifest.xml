@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        O aplicativo funciona 100% offline: nenhuma permissão (ex.: INTERNET) é solicitada.
+        Todas as telas são abertas por Intents EXPLÍCITAS; apenas a MainActivity é exportada,
+        pois é o ponto de entrada (ícone do launcher).
+    -->
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ControleProducao"
+        tools:targetApi="35">
+
+        <!-- Tela principal (painel). Intent-filter MAIN/LAUNCHER = abre ao tocar no ícone -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Listagem dos registros. Navegação "para cima" retorna à MainActivity -->
+        <activity
+            android:name=".ListagemActivity"
+            android:exported="false"
+            android:label="@string/titulo_listagem"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Detalhes de um registro. Recebe o extra EXTRA_DETALHE_ID -->
+        <activity
+            android:name=".DetalheActivity"
+            android:exported="false"
+            android:label="@string/titulo_detalhe"
+            android:parentActivityName=".ListagemActivity" />
+
+        <!-- Cadastro / edição / exclusão (CRUD). Recebe opcionalmente EXTRA_REGISTRO_ID.
+             adjustResize mantém os campos visíveis quando o teclado é exibido -->
+        <activity
+            android:name=".CadastroActivity"
+            android:exported="false"
+            android:label="@string/titulo_novo_registro"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+    </application>
+
+</manifest>

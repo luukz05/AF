@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tela de cadastro/edição (CRUD) de registros -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo"
+    android:fillViewport="true"
+    tools:context=".CadastroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margem_tela">
+
+        <!-- Título -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_titulo"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/campo_titulo"
+            app:counterEnabled="true"
+            app:counterMaxLength="60"
+            app:startIconDrawable="@drawable/ic_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:maxLength="60"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Setor (menu suspenso / exposed dropdown) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_setor"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:hint="@string/campo_setor">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/actv_setor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Tipo (RadioGroup) -->
+        <TextView
+            style="@style/ControleProducao.Rotulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/campo_tipo" />
+
+        <RadioGroup
+            android:id="@+id/rg_tipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/rb_tipo_registro"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_tipo_registro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tipo_registro" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_tipo_checklist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tipo_checklist" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_tipo_anotacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tipo_anotacao" />
+        </RadioGroup>
+
+        <!-- Prioridade (ChipGroup de seleção única) -->
+        <TextView
+            style="@style/ControleProducao.Rotulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/campo_prioridade" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_prioridade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:checkedChip="@+id/chip_prioridade_media"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_prioridade_baixa"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prioridade_baixa"
+                android:textColor="@color/prioridade_baixa" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_prioridade_media"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prioridade_media"
+                android:textColor="@color/prioridade_media" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_prioridade_alta"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prioridade_alta"
+                android:textColor="@color/prioridade_alta" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Responsável -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_responsavel"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_medio"
+            android:hint="@string/campo_responsavel"
+            app:startIconDrawable="@drawable/ic_person">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_responsavel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Descrição -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_descricao"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:hint="@string/campo_descricao"
+            app:counterEnabled="true"
+            app:counterMaxLength="500">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="500"
+                android:minLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Situação -->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_concluido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:text="@string/campo_concluido"
+            android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dica_campos_obrigatorios"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="@color/texto_secundario" />
+
+        <!-- Datas (somente no modo edição) -->
+        <TextView
+            android:id="@+id/tv_info_datas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="@color/texto_secundario"
+            android:visibility="gone"
+            tools:text="Criado em 20/11/2026 08:15"
+            tools:visibility="visible" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/espaco_grande" />
+
+        <!-- Botões de ação -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_salvar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/altura_botao"
+            android:text="@string/acao_cadastrar"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_save" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_excluir"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/altura_botao"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:text="@string/acao_excluir_registro"
+            android:textColor="@color/erro"
+            android:visibility="gone"
+            app:icon="@drawable/ic_delete"
+            app:iconTint="@color/erro"
+            app:strokeColor="@color/erro"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancelar"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:text="@string/acao_cancelar" />
+    </LinearLayout>
+</ScrollView>

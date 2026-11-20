@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- API 35+: mantém o layout tradicional (ActionBar abaixo da barra de status) -->
+    <style name="Theme.ControleProducao" parent="Base.Theme.ControleProducao">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base do aplicativo (Material Design 3, com ActionBar) -->
+    <style name="Base.Theme.ControleProducao" parent="Theme.Material3.Light">
+        <item name="colorPrimary">@color/azul_industrial</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="colorPrimaryContainer">@color/azul_container</item>
+        <item name="colorOnPrimaryContainer">@color/azul_on_container</item>
+        <item name="colorSecondary">@color/amarelo_seguranca</item>
+        <item name="colorOnSecondary">@color/texto_principal</item>
+        <item name="colorSecondaryContainer">@color/amarelo_container</item>
+        <item name="colorOnSecondaryContainer">@color/amarelo_on_container</item>
+        <item name="colorError">@color/erro</item>
+        <item name="android:colorBackground">@color/fundo</item>
+        <item name="colorSurface">@color/superficie</item>
+
+        <item name="android:statusBarColor">@color/azul_industrial_escuro</item>
+
+        <!-- ActionBar azul com título/ícones brancos -->
+        <item name="actionBarStyle">@style/Widget.ControleProducao.ActionBar</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
+    </style>
+
+    <style name="Theme.ControleProducao" parent="Base.Theme.ControleProducao" />
+
+    <style name="Widget.ControleProducao.ActionBar" parent="Widget.Material3.ActionBar.Solid">
+        <item name="background">@color/azul_industrial</item>
+        <item name="titleTextStyle">@style/TextAppearance.ControleProducao.ActionBarTitle</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+    <style name="TextAppearance.ControleProducao.ActionBarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <!-- Estilos reutilizados nos layouts -->
+    <style name="ControleProducao.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/raio_card</item>
+        <item name="cardBackgroundColor">@color/superficie</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="ControleProducao.Rotulo" parent="">
+        <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item>
+        <item name="android:textColor">@color/texto_secundario</item>
+        <item name="android:layout_marginTop">@dimen/espaco_medio</item>
+    </style>
+
+    <style name="ControleProducao.Valor" parent="">
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+        <item name="android:textColor">@color/texto_principal</item>
+    </style>
+
+    <style name="ControleProducao.Badge" parent="">
+        <item name="android:background">@drawable/bg_badge</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

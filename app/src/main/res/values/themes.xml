@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Tema monocromático: apenas preto e branco -->
     <style name="Theme.ControleProducao" parent="Theme.Material3.Light">
-        <item name="colorPrimary">@color/azul</item>
+        <item name="colorPrimary">@color/preto</item>
         <item name="colorOnPrimary">@color/branco</item>
+        <item name="colorPrimaryContainer">@color/preto</item>
+        <item name="colorOnPrimaryContainer">@color/branco</item>
+        <item name="colorSecondary">@color/preto</item>
+        <item name="colorOnSecondary">@color/branco</item>
+        <item name="colorOnSurface">@color/preto</item>
+        <item name="colorOnSurfaceVariant">@color/preto</item>
+        <item name="colorOutline">@color/preto</item>
+        <item name="colorSurface">@color/branco</item>
+        <item name="android:colorBackground">@color/branco</item>
+        <item name="android:statusBarColor">@color/preto</item>
+
+        <!-- ActionBar preta com título e seta brancos -->
+        <item name="actionBarStyle">@style/ActionBar.ControleProducao</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
+
         <!-- Mantém a ActionBar abaixo da barra de status no Android 15 -->
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <style name="ActionBar.ControleProducao" parent="Widget.Material3.ActionBar.Solid">
+        <item name="background">@color/preto</item>
+        <item name="titleTextStyle">@style/ActionBar.ControleProducao.Titulo</item>
+    </style>
+
+    <style name="ActionBar.ControleProducao.Titulo" parent="TextAppearance.Material3.ActionBar.Title">
+        <item name="android:textColor">@color/branco</item>
     </style>
 
 </resources>

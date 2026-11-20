@@ -1,248 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Tela principal: painel de resumo + navegação para cadastro e listagem -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundo"
-    android:fillViewport="true"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+    <Button
+        android:id="@+id/buttonNovo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/margem_tela">
+        android:text="@string/acao_novo_registro" />
 
-        <!-- Cabeçalho -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/buttonListar"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/acao_ver_registros" />
 
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:background="@drawable/bg_badge"
-                android:backgroundTint="@color/azul_container"
-                android:contentDescription="@string/cd_logo"
-                android:padding="12dp"
-                android:src="@drawable/ic_assignment"
-                app:tint="@color/azul_industrial" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/espaco_medio"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/main_titulo"
-                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                    android:textColor="@color/texto_principal"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/main_subtitulo"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="@color/texto_secundario" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Cartões de resumo -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/espaco_grande"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/ControleProducao.Card"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/espaco_pequeno"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="@dimen/espaco_medio">
-
-                    <TextView
-                        android:id="@+id/tv_total"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?attr/textAppearanceHeadlineMedium"
-                        android:textColor="@color/azul_industrial"
-                        android:textStyle="bold"
-                        tools:text="12" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/main_total"
-                        android:textAppearance="?attr/textAppearanceLabelLarge"
-                        android:textColor="@color/texto_secundario" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/ControleProducao.Card"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="@dimen/espaco_medio">
-
-                    <TextView
-                        android:id="@+id/tv_pendentes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?attr/textAppearanceHeadlineMedium"
-                        android:textColor="@color/status_pendente"
-                        android:textStyle="bold"
-                        tools:text="5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/main_pendentes"
-                        android:textAppearance="?attr/textAppearanceLabelLarge"
-                        android:textColor="@color/texto_secundario" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/ControleProducao.Card"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/espaco_pequeno"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="@dimen/espaco_medio">
-
-                    <TextView
-                        android:id="@+id/tv_concluidos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?attr/textAppearanceHeadlineMedium"
-                        android:textColor="@color/status_concluido"
-                        android:textStyle="bold"
-                        tools:text="7" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/main_concluidos"
-                        android:textAppearance="?attr/textAppearanceLabelLarge"
-                        android:textColor="@color/texto_secundario" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-
-        <!-- Alerta de pendências críticas (visível somente se houver) -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_alerta"
-            style="@style/ControleProducao.Card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/espaco_medio"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="gone"
-            app:cardBackgroundColor="@color/alerta_fundo"
-            tools:visibility="visible">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="@dimen/espaco_medio">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:importantForAccessibility="no"
-                    android:src="@drawable/ic_warning"
-                    app:tint="@color/prioridade_alta" />
-
-                <TextView
-                    android:id="@+id/tv_alerta"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/espaco_medio"
-                    android:layout_weight="1"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="@color/prioridade_alta"
-                    android:textStyle="bold"
-                    tools:text="1 pendência de prioridade ALTA. Toque para ver." />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Ações principais -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/espaco_grande"
-            android:text="@string/main_acoes"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            android:textColor="@color/texto_principal" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_novo_registro"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/altura_botao"
-            android:layout_marginTop="@dimen/espaco_medio"
-            android:text="@string/acao_novo_registro"
-            android:textSize="16sp"
-            app:icon="@drawable/ic_add" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_ver_registros"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/altura_botao"
-            android:layout_marginTop="@dimen/espaco_pequeno"
-            android:text="@string/acao_ver_registros"
-            android:textSize="16sp"
-            app:icon="@drawable/ic_list" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:minHeight="@dimen/espaco_grande" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/espaco_grande"
-            android:gravity="center"
-            android:text="@string/main_rodape"
-            android:textAppearance="?attr/textAppearanceBodySmall"
-            android:textColor="@color/texto_secundario" />
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

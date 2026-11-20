@@ -1,128 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Controle de Produção</string>
 
-    <!-- Títulos das telas -->
     <string name="titulo_listagem">Registros</string>
-    <string name="titulo_detalhe">Detalhes</string>
-    <string name="titulo_novo_registro">Novo registro</string>
-    <string name="titulo_editar_registro">Editar registro</string>
+    <string name="titulo_novo">Novo registro</string>
+    <string name="titulo_editar">Editar registro</string>
 
-    <!-- Tela principal -->
-    <string name="main_titulo">Painel da produção</string>
-    <string name="main_subtitulo">Registros, listas de controle e anotações operacionais em um só lugar.</string>
-    <string name="main_total">Total</string>
-    <string name="main_pendentes">Pendentes</string>
-    <string name="main_concluidos">Concluídos</string>
-    <string name="main_acoes">O que deseja fazer?</string>
-    <string name="main_rodape">Funciona 100% offline · dados mantidos em memória</string>
-    <plurals name="alerta_prioridade_alta">
-        <item quantity="one">%d pendência de prioridade ALTA. Toque para ver.</item>
-        <item quantity="many">%d pendências de prioridade ALTA. Toque para ver.</item>
-        <item quantity="other">%d pendências de prioridade ALTA. Toque para ver.</item>
-    </plurals>
+    <string name="total_registros">Registros cadastrados: %1$d</string>
+    <string name="lista_vazia">Nenhum registro cadastrado</string>
 
-    <!-- Ações / botões -->
+    <string name="campo_titulo">Título</string>
+    <string name="campo_setor">Setor</string>
+    <string name="campo_descricao">Descrição</string>
+    <string name="campo_concluido">Concluído</string>
+
     <string name="acao_novo_registro">Novo registro</string>
     <string name="acao_ver_registros">Ver registros</string>
-    <string name="acao_novo">Novo</string>
-    <string name="acao_cadastrar">Cadastrar</string>
-    <string name="acao_salvar_alteracoes">Salvar alterações</string>
+    <string name="acao_salvar">Salvar</string>
     <string name="acao_excluir">Excluir</string>
-    <string name="acao_excluir_registro">Excluir registro</string>
-    <string name="acao_cancelar">Cancelar</string>
-    <string name="acao_editar">Editar</string>
-    <string name="acao_desfazer">Desfazer</string>
-    <string name="acao_ok">OK</string>
-    <string name="acao_marcar_concluido">Marcar como concluído</string>
-    <string name="acao_marcar_pendente">Reabrir (pendente)</string>
 
-    <!-- Formulário de cadastro -->
-    <string name="campo_titulo">Título *</string>
-    <string name="campo_setor">Setor *</string>
-    <string name="campo_tipo">Tipo de informação</string>
-    <string name="campo_prioridade">Prioridade</string>
-    <string name="campo_responsavel">Responsável *</string>
-    <string name="campo_descricao">Descrição / observações</string>
-    <string name="campo_concluido">Concluído</string>
-    <string name="dica_campos_obrigatorios">* campos obrigatórios</string>
-
-    <string name="tipo_registro">Registro</string>
-    <string name="tipo_checklist">Checklist</string>
-    <string name="tipo_anotacao">Anotação</string>
-
-    <string name="prioridade_baixa">Baixa</string>
-    <string name="prioridade_media">Média</string>
-    <string name="prioridade_alta">Alta</string>
-
-    <string-array name="setores">
-        <item>Montagem</item>
-        <item>Usinagem</item>
-        <item>Soldagem</item>
-        <item>Pintura</item>
-        <item>Qualidade</item>
-        <item>Manutenção</item>
-        <item>Almoxarifado</item>
-        <item>Expedição</item>
-    </string-array>
-
-    <!-- Validação -->
-    <string name="erro_campo_obrigatorio">Campo obrigatório</string>
-    <string name="erro_titulo_curto">Informe pelo menos %d caracteres</string>
-    <string name="erro_selecione_setor">Selecione um setor</string>
-
-    <!-- Listagem -->
-    <string name="busca_dica">Buscar por título, setor, responsável…</string>
-    <string name="filtro_todos">Todos</string>
-    <string name="filtro_pendentes">Pendentes</string>
-    <string name="filtro_concluidos">Concluídos</string>
-    <string name="lista_vazia">Nenhum registro cadastrado ainda.\nToque em \"Novo\" para começar.</string>
-    <string name="lista_sem_resultados">Nenhum registro encontrado para a busca/filtro atual.</string>
-    <string name="dica_listagem">Toque para ver detalhes · toque longo para editar</string>
-    <plurals name="contador_registros">
-        <item quantity="one">%d registro</item>
-        <item quantity="many">%d registros</item>
-        <item quantity="other">%d registros</item>
-    </plurals>
-
-    <!-- Detalhes -->
-    <string name="rotulo_setor">Setor</string>
-    <string name="rotulo_tipo">Tipo</string>
-    <string name="rotulo_responsavel">Responsável</string>
-    <string name="rotulo_criado_em">Criado em</string>
-    <string name="rotulo_atualizado_em">Última alteração</string>
-    <string name="rotulo_descricao">Descrição / observações</string>
-    <string name="valor_nunca">—</string>
-    <string name="valor_sem_descricao">Sem descrição.</string>
-
-    <!-- Formatos -->
-    <string name="formato_setor_tipo">%1$s • %2$s</string>
-    <string name="formato_prioridade">Prioridade %1$s</string>
-    <string name="formato_criado_em">Criado em %1$s</string>
-    <string name="formato_atualizado_em">Última alteração em %1$s</string>
-
-    <!-- Situação -->
-    <string name="status_pendente">● Pendente</string>
-    <string name="status_concluido">✔ Concluído</string>
-
-    <!-- Diálogo de exclusão -->
-    <string name="dialogo_excluir_titulo">Excluir registro?</string>
-    <string name="dialogo_excluir_mensagem">O registro \"%1$s\" será removido permanentemente. Esta ação não pode ser desfeita.</string>
-
-    <!-- Mensagens de feedback (Toast / Snackbar) -->
-    <string name="msg_registro_criado">Registro cadastrado com sucesso!</string>
-    <string name="msg_registro_atualizado">Registro atualizado com sucesso!</string>
-    <string name="msg_registro_excluido">Registro excluído.</string>
-    <string name="msg_registro_nao_encontrado">Registro não encontrado.</string>
-    <string name="msg_erro_validacao">Verifique os campos destacados em vermelho.</string>
-    <string name="msg_erro_atualizar">Erro: não foi possível atualizar o registro.</string>
-    <string name="msg_erro_excluir">Erro: não foi possível excluir o registro.</string>
-    <string name="msg_operacao_cancelada">Operação cancelada.</string>
-    <string name="msg_marcado_concluido">Registro marcado como concluído.</string>
-    <string name="msg_marcado_pendente">Registro reaberto como pendente.</string>
-    <string name="msg_alteracao_desfeita">Alteração desfeita.</string>
-    <string name="msg_voltar_para_sair">Pressione voltar novamente para sair.</string>
-
-    <!-- Acessibilidade -->
-    <string name="cd_logo">Ícone do aplicativo</string>
+    <string name="msg_campos_obrigatorios">Preencha título e setor</string>
+    <string name="msg_registro_criado">Registro cadastrado</string>
+    <string name="msg_registro_atualizado">Registro atualizado</string>
+    <string name="msg_registro_excluido">Registro excluído</string>
+    <string name="msg_nao_encontrado">Registro não encontrado</string>
 </resources>

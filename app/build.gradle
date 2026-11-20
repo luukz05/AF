@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.controleproducao'
-    compileSdk 35
+    compileSdk 37
 
     defaultConfig {
         applicationId "com.example.controleproducao"
@@ -34,7 +34,6 @@ dependencies {
     // Somente bibliotecas oficiais Google/AndroidX (sem serviços externos ou internet)
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
